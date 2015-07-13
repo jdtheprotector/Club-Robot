@@ -54,6 +54,36 @@
 void operatorControl() {
 
 	while (1) {
-		int
+
+        //Variables
+		int frontRightDrive = 1 ;
+		int frontLeftDrive  = 2 ;
+		int backRightDrive  = 3 ;
+		int backLeftDrive   = 4 ;
+		int armLift         = 5 ;
+		int clawVertical    = 6 ;
+		int clawOpenShut    = 7 ;
+		int joyChannelRightX = joystickGetAnalog(1 , 1);
+		int joyChannelRightY = joystickGetAnalog(1 , 2);
+		int joyChannelLeftY = joystickGetAnalog(1 , 3);
+		int joyChannelLeftX = joystickGetAnalog(1 , 4);
+        int leftShoulderUp    = joystickGetDigital(1, 5, JOY_UP);
+        int leftShoulderDown  = joystickGetDigital(1, 5, JOY_DOWN);
+        int rightShoulderUp   = joystickGetDigital(1, 6, JOY_UP);
+        int rightShoulderDown = joystickGetDigital(1, 6, JOY_DOWN);
+        int clawRotateSpeed = 0;
+
+        ///Tank Drive
+
+        int rightDrive = joyChannelRightY;
+        int leftDrive  = joyChannelLeftY;
+        motorSet(frontRightDrive, rightDrive);
+        motorSet(frontLeftDrive , leftDrive);
+        motorSet(backRightDrive , rightDrive);
+        motorSet(backLeftDrive  , leftDrive);
+
+
+
+
 	}
 }
